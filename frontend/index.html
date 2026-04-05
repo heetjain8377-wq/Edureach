@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduReach Coaching Classes – Indore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">Edu<span>Reach</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#teachers">Teachers</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#enquiry" class="nav-btn">Enquire Now</a>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Admissions Open 2025–26
+      </div>
+      <h1 class="hero-title">
+        Your Success<br/>Starts <span class="highlight">Here.</span>
+      </h1>
+      <p class="hero-sub">
+        Expert coaching for Class 6–12, JEE & NEET. Small batches,
+        experienced faculty, and proven results since 2010.
+      </p>
+      <div class="hero-btns">
+        <a href="#enquiry" class="btn-primary">📋 Enquire Now</a>
+        <a href="tel:+919876543210" class="btn-outline">📞 Call Us</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">1500+</span>
+        <span class="stat-label">Students</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">15+</span>
+        <span class="stat-label">Years</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">95%</span>
+        <span class="stat-label">Pass Rate</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">IIT/NEET Selections</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="sec-head center">
+      <span class="sec-label">✦ What We Offer</span>
+      <h2 class="sec-title">Our <span>Courses</span></h2>
+      <p class="sec-sub">Choose the right program for your goals. All batches are small sized for personal attention.</p>
+    </div>
+    <!-- Loaded from backend by script.js -->
+    <div class="courses-grid" id="coursesGrid">
+      <div class="loading-msg">⏳ Loading courses...</div>
+    </div>
+  </section>
+
+  <!-- TEACHERS -->
+  <section id="teachers">
+    <div class="sec-head center">
+      <span class="sec-label">✦ Learn From The Best</span>
+      <h2 class="sec-title">Our <span>Teachers</span></h2>
+      <p class="sec-sub">Experienced, passionate, and dedicated to your success.</p>
+    </div>
+    <!-- Loaded from backend by script.js -->
+    <div class="teachers-grid" id="teachersGrid">
+      <div class="loading-msg">⏳ Loading teachers...</div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results">
+    <div class="results-inner">
+      <div class="results-left reveal">
+        <span class="sec-label">✦ Our Track Record</span>
+        <h2 class="sec-title">Results That <span>Speak.</span></h2>
+        <p class="sec-sub">Year after year, our students prove that the right guidance makes all the difference.</p>
+        <div class="result-items">
+          <div class="result-item">
+            <span class="result-icon">🏆</span>
+            <div>
+              <strong>Top 10 in Indore Board</strong>
+              <p>3 students in top 10 in MP Board 2024</p>
+            </div>
+          </div>
+          <div class="result-item">
+            <span class="result-icon">🎯</span>
+            <div>
+              <strong>IIT Selections 2024</strong>
+              <p>12 students selected in IIT JEE this year</p>
+            </div>
+          </div>
+          <div class="result-item">
+            <span class="result-icon">🩺</span>
+            <div>
+              <strong>NEET Qualifiers</strong>
+              <p>18 students qualified NEET in 2024</p>
+            </div>
+          </div>
+          <div class="result-item">
+            <span class="result-icon">⭐</span>
+            <div>
+              <strong>95% Pass Rate</strong>
+              <p>Consistently maintained for 10+ years</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="results-right reveal">
+        <div class="results-grid">
+          <div class="result-stat-card">
+            <span class="big-num">1500+</span>
+            <span class="big-label">Total Students</span>
+          </div>
+          <div class="result-stat-card accent">
+            <span class="big-num">50+</span>
+            <span class="big-label">IIT / NEET Selections</span>
+          </div>
+          <div class="result-stat-card accent">
+            <span class="big-num">15+</span>
+            <span class="big-label">Years of Excellence</span>
+          </div>
+          <div class="result-stat-card">
+            <span class="big-num">95%</span>
+            <span class="big-label">Pass Rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="sec-head center">
+      <span class="sec-label">✦ Student Stories</span>
+      <h2 class="sec-title">What Students <span>Say</span></h2>
+      <p class="sec-sub">Real words from real students who achieved their dreams with EduReach.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"EduReach changed my life. I was struggling in Maths but after joining here, I scored 95 in boards. The teachers are very patient and supportive."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>Ananya Joshi</strong><span>Class 12 · Scored 92%</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I got selected in IIT Bombay this year. EduReach's JEE batch is simply the best in Indore. Small batches mean teachers actually know your weaknesses."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div><strong>Rohan Patel</strong><span>IIT Bombay · JEE Batch 2024</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"My daughter joined NEET batch here and qualified in first attempt! The biology faculty is outstanding. Highly recommend to every medical aspirant."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div><strong>Sunita Mishra</strong><span>Parent · NEET 2024</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section id="enquiry">
+    <div class="enquiry-inner">
+      <div class="enquiry-left reveal">
+        <span class="sec-label">✦ Take The First Step</span>
+        <h2 class="sec-title">Enquire <span>Today</span></h2>
+        <p class="sec-sub">Fill the form and our team will call you within 2 hours. Free counselling session included!</p>
+        <div class="enq-perks">
+          <div class="enq-perk"><span>✓</span> Free first demo class</div>
+          <div class="enq-perk"><span>✓</span> No registration fee</div>
+          <div class="enq-perk"><span>✓</span> Flexible batch timings</div>
+          <div class="enq-perk"><span>✓</span> Personal study plan</div>
+        </div>
+      </div>
+      <div class="enquiry-form reveal">
+        <h3 class="form-title">📋 Send Enquiry</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Student Name *</label>
+            <input type="text" id="enqName" placeholder="Rahul Sharma"/>
+          </div>
+          <div class="form-field">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" id="enqPhone" placeholder="+91 98765 43210"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email (optional)</label>
+          <input type="email" id="enqEmail" placeholder="rahul@email.com"/>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Current Class</label>
+            <select id="enqClass">
+              <option value="">Select Class</option>
+              <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+              <option>Class 9</option><option>Class 10</option>
+              <option>Class 11</option><option>Class 12</option><option>Dropper</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Interested Course</label>
+            <select id="enqCourse">
+              <option value="">Select Course</option>
+              <option>Foundation (6–8)</option>
+              <option>Class 9 & 10</option>
+              <option>Class 11 & 12</option>
+              <option>JEE Preparation</option>
+              <option>NEET Preparation</option>
+              <option>Crash Course</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Message (optional)</label>
+          <textarea id="enqMsg" placeholder="Any questions or special requirements?"></textarea>
+        </div>
+        <button class="btn-submit" id="submitBtn" onclick="submitEnquiry()">
+          📩 Send Enquiry
+        </button>
+        <div class="form-msg" id="formMsg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sec-head center reveal">
+      <span class="sec-label">✦ Find Us</span>
+      <h2 class="sec-title">Visit <span>Us</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📍</div>
+          <div>
+            <strong>Address</strong>
+            <span>42, Near Rajiv Gandhi Square,<br/>Vijay Nagar, Indore – 452010</span>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📞</div>
+          <div>
+            <strong>Phone / WhatsApp</strong>
+            <span>+91 98765 43210</span>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">🕐</div>
+          <div>
+            <strong>Batch Timings</strong>
+            <span>Morning: 6 AM – 9 AM<br/>Evening: 4 PM – 8 PM</span>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📧</div>
+          <div>
+            <strong>Email</strong>
+            <span>info@edureachindore.in</span>
+          </div>
+        </div>
+        <div class="contact-btns">
+          <a href="https://wa.me/919876543210" target="_blank" class="btn-primary">💬 WhatsApp Us</a>
+          <a href="tel:+919876543210" class="btn-outline">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="map-box reveal">
+        <span>🗺️</span>
+        <p><strong>EduReach Coaching Classes</strong><br/>42, Near Rajiv Gandhi Square<br/>Vijay Nagar, Indore – 452010</p>
+        <a href="https://maps.google.com/?q=Vijay+Nagar+Indore" target="_blank">📍 Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Edu<span>Reach</span></div>
+        <p>Indore's most trusted coaching institute since 2010. Shaping futures, one student at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#courses">Courses</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#results">Results</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#enquiry">Enquire Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <a href="#enquiry">Foundation (6–8)</a>
+        <a href="#enquiry">Class 9 & 10</a>
+        <a href="#enquiry">JEE Preparation</a>
+        <a href="#enquiry">NEET Preparation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/919876543210">💬 WhatsApp</a>
+        <a href="tel:+919876543210">📞 Call Us</a>
+        <a href="#">📘 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="/admin.html" style="color:#3b78f5">🔐 Admin Panel</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 EduReach Coaching Classes, Indore. All rights reserved.</span>
+      <span>Made with ❤️ for local businesses</span>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="floating-buttons">
+    <div class="float-item">
+      <span class="float-tip">Chat on WhatsApp</span>
+      <a href="https://wa.me/919876543210" target="_blank" class="fab fab-wa">💬</a>
+    </div>
+    <div class="float-item">
+      <span class="float-tip">Call Us Now</span>
+      <a href="tel:+919876543210" class="fab fab-call">📞</a>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduReach Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       LOGIN SCREEN
+  ══════════════════════════════════ -->
+  <div id="loginScreen">
+    <div class="login-box">
+      <div class="login-logo">Edu<span>Reach</span></div>
+      <p class="login-subtitle">🔐 Admin Panel — Authorized Access Only</p>
+      <div class="login-field">
+        <label>Password</label>
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Enter admin password"
+          onkeydown="if(event.key==='Enter') doLogin()"
+        />
+      </div>
+      <button class="btn-login" onclick="doLogin()">Login →</button>
+      <p class="login-error" id="loginError">❌ Wrong password. Try again.</p>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════
+       ADMIN APP (shown after login)
+  ══════════════════════════════════ -->
+  <div id="adminApp">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        Edu<span>Reach</span>
+        <small>Admin Panel</small>
+      </div>
+      <div class="nav-item active" onclick="showPage('dashboard', this)">
+        <span>📊</span> Dashboard
+      </div>
+      <div class="nav-item" onclick="showPage('enquiries', this)">
+        <span>📋</span> Enquiries
+        <span class="nav-badge" id="newBadge"></span>
+      </div>
+      <div class="nav-item" onclick="showPage('courses', this)">
+        <span>📚</span> Courses
+      </div>
+      <div class="nav-item" onclick="showPage('teachers', this)">
+        <span>👨‍🏫</span> Teachers
+      </div>
+      <div class="nav-item" onclick="window.open('/', '_blank')">
+        <span>🌐</span> View Website
+      </div>
+      <div class="sidebar-footer">
+        <button class="btn-logout" onclick="doLogout()">🚪 Logout</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- DASHBOARD -->
+      <div class="page active" id="page-dashboard">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Welcome back, Admin 👋</p>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-number" id="totalEnquiries">—</div>
+            <div class="stat-label">Total Enquiries</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="newEnquiries">—</div>
+            <div class="stat-label">New Leads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="joinedCount">—</div>
+            <div class="stat-label">Joined</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="totalCourses">—</div>
+            <div class="stat-label">Total Courses</div>
+          </div>
+        </div>
+        <div class="section-card">
+          <h2 class="section-title">Recent Enquiries</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Name</th><th>Phone</th><th>Course</th><th>Status</th><th>Date</th></tr>
+              </thead>
+              <tbody id="recentTable">
+                <tr><td colspan="5" class="empty-row">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENQUIRIES -->
+      <div class="page" id="page-enquiries">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">📋 Enquiries</h1>
+            <p class="page-subtitle">All student enquiries and leads</p>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th><th>Phone</th><th>Class</th><th>Course</th>
+                  <th>Message</th><th>Status</th><th>Date</th><th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="enquiriesTable">
+                <tr><td colspan="8" class="empty-row">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- COURSES -->
+      <div class="page" id="page-courses">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">📚 Courses</h1>
+            <p class="page-subtitle">Add, edit or remove courses</p>
+          </div>
+          <button class="btn-add" onclick="showForm('courseForm')">+ Add Course</button>
+        </div>
+
+        <!-- Course Form -->
+        <div class="form-box" id="courseForm" style="display:none">
+          <h2 class="form-box-title" id="courseFormTitle">Add New Course</h2>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Icon (Emoji)</label>
+              <input type="text" id="cIcon" placeholder="📚"/>
+            </div>
+            <div class="form-field">
+              <label>Tag (optional)</label>
+              <input type="text" id="cTag" placeholder="Popular"/>
+            </div>
+            <div class="form-field full">
+              <label>Course Title *</label>
+              <input type="text" id="cTitle" placeholder="JEE Preparation"/>
+            </div>
+            <div class="form-field full">
+              <label>Description *</label>
+              <textarea id="cDesc" placeholder="Describe this course..."></textarea>
+            </div>
+            <div class="form-field">
+              <label>Fee (₹/month) *</label>
+              <input type="number" id="cFee" placeholder="2000"/>
+            </div>
+            <div class="form-field">
+              <label>Duration</label>
+              <input type="text" id="cDuration" placeholder="1 Year"/>
+            </div>
+            <div class="form-field">
+              <label>Display Order</label>
+              <input type="number" id="cOrder" placeholder="1"/>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-save" onclick="saveCourse()">💾 Save Course</button>
+            <button class="btn-cancel" onclick="hideForm('courseForm')">Cancel</button>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Icon</th><th>Title</th><th>Tag</th><th>Fee</th><th>Duration</th><th>Actions</th></tr>
+              </thead>
+              <tbody id="coursesTable">
+                <tr><td colspan="6" class="empty-row">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEACHERS -->
+      <div class="page" id="page-teachers">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">👨‍🏫 Teachers</h1>
+            <p class="page-subtitle">Manage teacher profiles</p>
+          </div>
+          <button class="btn-add" onclick="showForm('teacherForm')">+ Add Teacher</button>
+        </div>
+
+        <!-- Teacher Form -->
+        <div class="form-box" id="teacherForm" style="display:none">
+          <h2 class="form-box-title" id="teacherFormTitle">Add New Teacher</h2>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Emoji</label>
+              <input type="text" id="tEmoji" placeholder="👨‍🏫"/>
+            </div>
+            <div class="form-field">
+              <label>Display Order</label>
+              <input type="number" id="tOrder" placeholder="1"/>
+            </div>
+            <div class="form-field">
+              <label>Full Name *</label>
+              <input type="text" id="tName" placeholder="Rajesh Kumar"/>
+            </div>
+            <div class="form-field">
+              <label>Subject *</label>
+              <input type="text" id="tSubject" placeholder="Mathematics"/>
+            </div>
+            <div class="form-field">
+              <label>Qualification *</label>
+              <input type="text" id="tQualification" placeholder="IIT Graduate"/>
+            </div>
+            <div class="form-field">
+              <label>Experience *</label>
+              <input type="text" id="tExperience" placeholder="10 Years Exp."/>
+            </div>
+            <div class="form-field full">
+              <label>Motivational Quote *</label>
+              <textarea id="tQuote" placeholder="Write a motivating quote..."></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-save" onclick="saveTeacher()">💾 Save Teacher</button>
+            <button class="btn-cancel" onclick="hideForm('teacherForm')">Cancel</button>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Emoji</th><th>Name</th><th>Subject</th><th>Qualification</th><th>Experience</th><th>Actions</th></tr>
+              </thead>
+              <tbody id="teachersTable">
+                <tr><td colspan="6" class="empty-row">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-content -->
+  </div><!-- /adminApp -->
+
+  <!-- Toast message popup -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
